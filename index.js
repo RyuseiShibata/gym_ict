@@ -17,7 +17,7 @@ $(function () {
        
         var maintenance_cal = basal_metabolism * strength;
             
-        var msg = `メンテナンスカロリー：${basal_metabolism}kcal`;
+        var msg = `【基礎代謝】\n${basal_metabolism}kcal\n \n【メンテナンスカロリー】\n${maintenance_cal}kcal `;
         sendText(msg);
 
         return false;
