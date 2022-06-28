@@ -5,7 +5,8 @@ $(function () {
         var height = $('input[name="height"]').val();
         var age = $('input[name="age"]').val();
         var sex = $('input[name="sex"]:checked').val();
-        var strength = $('select[name="strength"]:selected').val();
+        var strength = document.getElementById("strength").value;
+        //var strength = $('select[name="strength"]:selected').val();
       
         var basal_metabolism;
         
