@@ -6,7 +6,6 @@ $(function () {
         var age = $('input[name="age"]').val();
         var sex = $('input[name="sex"]:checked').val();
         var strength = document.getElementById("strength").value;
-        //var strength = $('select[name="strength"]:selected').val();
       
         var basal_metabolism;
         
@@ -17,8 +16,14 @@ $(function () {
         }
        
         var maintenance_cal = basal_metabolism * strength;
+        var diet_cal = maintenance_cal - 500;
+        
+        var protein = diet_cal * 0.4 / 4 ;
+        var fat = diet_cal * 0.2 / 9 ;
+        var carbohydrate = diet_cal * 0.4 / 4 ;
             
-        var msg = `【基礎代謝】\n ${basal_metabolism.toPrecision(4)}kcal\n\n 【メンテナンスカロリー】\n${maintenance_cal}kcal\n ${strength}`;
+        var msg = `【基礎代謝】\n ${basal_metabolism.toPrecision(4)}kcal\n\n 【メンテナンスカロリー】\n ${maintenance_cal.toPrecision(4)}kcal\n\n 【ダイエットカロリー】\n 
+        ${diet_cal.toPrecision(4)}kcal}\n\n 【ダイエット時の栄養素摂取量】\n タンパク質：${protein.toPrecision(3)}g\n 脂質：${fat.toPrecision(2)}g\n 炭水化物：${carbohydrate.toPrecision(3)}g`;
         sendText(msg);
 
         return false;
